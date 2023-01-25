@@ -1,3 +1,5 @@
+//Libreria creada por Figueroa Leonel Sebastian. Alias KonnorRK-800
+
 #include <stdio.h>
 #include <windows.h>
 class serial
@@ -92,7 +94,7 @@ int serial::begin(int BPS)
     
     if (GetCommState(COM, &dcbSerialParams) == 0)
 	{
-        printf("Error al obtener la configuraciÛn del puerto serie!\n");
+        printf("Error al obtener la configuraci√≥n del puerto serie!\n");
         CloseHandle(COM);
         return 1;
     }
@@ -123,7 +125,7 @@ int serial::begin(int BPS)
         return 1;
     }
 	PurgeComm(COM, PURGE_RXCLEAR | PURGE_TXCLEAR); //vacia el buffer
-    // el puerto serie est· abierto y configurado, se puede usar para enviar y recibir datos
+    // el puerto serie est√° abierto y configurado, se puede usar para enviar y recibir datos
     printf("Puerto serie abierto y configurado con exito!\n");
 
 
@@ -147,7 +149,7 @@ int serial::begin(int BPS, int ByteSize, int StopBits, int Parity)
     
     if (GetCommState(COM, &dcbSerialParams) == 0)
 	{
-        //printf("Error al obtener la configuraciÛn del puerto serie!\n");
+        //printf("Error al obtener la configuraci√≥n del puerto serie!\n");
         CloseHandle(COM);
         return -2;
     }
@@ -178,7 +180,7 @@ int serial::begin(int BPS, int ByteSize, int StopBits, int Parity)
         return -4;
     }
 
-    // el puerto serie est· abierto y configurado, se puede usar para enviar y recibir datos
+    // el puerto serie est√° abierto y configurado, se puede usar para enviar y recibir datos
     //printf("Puerto serie abierto y configurado con exito!\n");
     return 0;
 
@@ -191,7 +193,7 @@ void serial::end()
 
 int serial::read()
 {
-	char buffer=0; 	 //Almaceno el caracter leÌdo
+	char buffer=0; 	 //Almaceno el caracter le√≠do
 	DWORD bytesRead; //Pongo esto pero no lo uso jeje.
 	
 	if (ReadFile(COM, &buffer, sizeof(buffer), &bytesRead, NULL)) //lee el primer byte del puerto serie, si la lectura fue exitosa, devuelve "TRUE" y continua con el programa
@@ -202,7 +204,7 @@ int serial::read()
 			return dato; 			//Si todo lo anterior se corrobora, devielve el dato
     	}
     	
-		return -2;//devuelve -2 si no es un caracter ASCII reducido v·lido
+		return -2;//devuelve -2 si no es un caracter ASCII reducido v√°lido
     }
 	
 	return -1; // Si no se pudo leer el puerto serie o el buffer esta vacio -1
