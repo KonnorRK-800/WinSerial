@@ -6,3 +6,5 @@ Esto, para simplificar el uso del puerto serie en aplicaciones en las que deba c
 
 Debido al cambio de plataforma, si un unico programador debe programar el microcontrolador y luego la App de PC, le resultaria 
 muy dificultoso, ya que en Windows, las funciones son totalmente distintas, mas complicadas y mas engorrosas (o al menos asi resultaron para mi).
+
+Aun no esta en la version final, ya que falta implementar varias funciones. Pero ire actualizando el codigo poco a poco.
